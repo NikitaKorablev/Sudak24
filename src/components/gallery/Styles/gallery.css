@@ -1,0 +1,34 @@
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  z-index: 1;
+  height: 731px;
+  width: auto;
+  background-color: #fbfbfd;
+}
+
+.wrapper .theme {
+  width: 60%;
+  margin: auto;
+  /* background-color: #333; */
+}
+
+.owl-item {
+  height: 60%;
+  /* width: auto; */
+  margin: auto;
+}
+
+#owl-demo .item img {
+  /* background-color: aqua; */
+  display: block;
+  width: 100%;
+  height: inherit;
+}
+/*# sourceMappingURL=gallery.css.map */

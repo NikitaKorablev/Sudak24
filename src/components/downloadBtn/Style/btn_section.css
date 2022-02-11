@@ -1,0 +1,54 @@
+.wrapper-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: auto;
+  height: 35vh;
+  background-color: #fbfbfd;
+}
+
+.button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 50%;
+}
+
+.button button {
+  height: 60%;
+  width: 400px;
+  margin: auto;
+  background-color: #ededf2;
+  border-radius: 50px;
+  border: none;
+  line-height: 10px;
+  font-size: 30px;
+}
+
+.button button p {
+  line-height: 10px;
+}
+
+.button button:hover {
+  background-color: rgba(163, 163, 163, 0.911);
+}
+
+.lines {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  width: 50%;
+  height: 100%;
+}
+
+.lines img {
+  height: inherit;
+  width: auto;
+}
+/*# sourceMappingURL=btn_section.css.map */

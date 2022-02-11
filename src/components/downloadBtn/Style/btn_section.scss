@@ -1,0 +1,43 @@
+@import "../../assets/Variables/Variables.scss";
+.wrapper-button {
+  display: flex;
+  justify-content: space-between;
+
+  width: auto;
+  height: 35vh;
+  background-color: $whiteColor;
+}
+.button {
+  display: inline-flex;
+  width: 50%;
+  // background-color: $greenColor;
+
+  button {
+    height: 60%;
+    width: 400px;
+    margin: auto;
+    background-color: $coldGrey;
+    border-radius: 50px;
+    border: none;
+    line-height: 10px;
+    font-size: 30px;
+    p {
+      line-height: 10px;
+    }
+  }
+  button:hover {
+    background-color: $greyColor;
+  }
+}
+.lines {
+  display: inline-flex;
+  justify-content: end;
+  width: 50%;
+  height: 100%;
+  // background-color: $greenColor;
+
+  img {
+    height: inherit;
+    width: auto;
+  }
+}

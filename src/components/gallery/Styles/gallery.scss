@@ -1,0 +1,26 @@
+@import "../../assets/Variables/Variables.scss";
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  height: 731px;
+  width: auto;
+  background-color: $whiteColor;
+}
+.wrapper .theme {
+  width: 60%;
+  margin: auto;
+  /* background-color: #333; */
+}
+.owl-item {
+  height: 60%;
+  /* width: auto; */
+  margin: auto;
+}
+#owl-demo .item img {
+  /* background-color: aqua; */
+  display: block;
+  width: 100%;
+  height: inherit;
+}
