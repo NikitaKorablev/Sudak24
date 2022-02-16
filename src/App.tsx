@@ -3,7 +3,6 @@ import About from "./components/information/index";
 import miniHouse from "./components/assets/images/house.png";
 import StartPage from "./components/startPages/startPage";
 import DownloadBtn from "./components/downloadBtn/downloadBtn";
-// import t from "./components/downloadBtn/files";
 
 const aboutText =
   "Lorem ipsum, dolor sit amet consectetur adipisicing elit. \

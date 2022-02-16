@@ -1,0 +1,96 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+footer {
+  height: 250px;
+  background-color: #1d1d1d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container {
+  height: 70%;
+  width: 90%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* background-color: green; */
+}
+
+.container .links {
+  height: 100%;
+  width: 10%;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 0;
+}
+
+.container .links h3 {
+  font-size: 35px;
+  color: white;
+  margin: auto 0 0 0;
+}
+
+.container .links .white_line {
+  height: 2px;
+  width: 100%;
+  margin: auto;
+  background-color: white;
+}
+
+.container .links a {
+  width: auto;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  text-decoration: none;
+  margin: auto 0;
+}
+
+.container .links a img {
+  margin: auto 10px auto 0;
+  height: 24px;
+  width: 24px;
+}
+
+.container .links a p {
+  font-size: 20px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
+.container .contacts {
+  height: 100%;
+  width: 50%;
+  background-color: green;
+}
+/*# sourceMappingURL=index.css.map */
