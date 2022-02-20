@@ -4,18 +4,19 @@ import clickMe from "./download";
 import "./Style/btn_section.css";
 
 type DownloadBtnPropsType = {
+  title: string;
   name: string;
 };
 
 const DownloadBtn: React.FC<DownloadBtnPropsType> = (props) => {
-  const { name } = props;
+  const { title, name } = props; // name - имя файла для скачивания
 
   return (
     <div className="wrapper-button">
       <div className="button">
         <button type="button" onClick={() => clickMe(name)}>
           <h3>ПРАЙС-ЛИСТ</h3>
-          <p>Экскурсии по Крыму</p>
+          <p>{title}</p>
           <p>Загрузить</p>
         </button>
       </div>

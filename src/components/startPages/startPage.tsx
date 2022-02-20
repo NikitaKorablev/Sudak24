@@ -1,18 +1,23 @@
 import React from "react";
 import "./Style/startPage.css";
-import bg1 from "../assets/images/bg-image.png";
+// import bg1 from "../assets/images/bg-image.png";
+import InfoBlock from "./infoBlock";
 
 type StartPagePropsType = {
-  logoLocation?: string;
+  bgImg: string;
+  location?: string;
   logoColor: string;
-  block: string;
+  blockColor: string;
+  title: string;
+  message: object | string;
 };
 
 const StartPage: React.FC<StartPagePropsType> = (props) => {
-  const { logoLocation, logoColor, block } = props;
+  const { bgImg, location, logoColor, blockColor, title, message } = props;
 
   let obj;
-  if (logoLocation === "right") {
+  let blockLocation;
+  if (location === "right") {
     obj = (
       <div className="header">
         <div className="logo" style={{ color: logoColor, textAlign: "end" }}>
@@ -20,6 +25,7 @@ const StartPage: React.FC<StartPagePropsType> = (props) => {
         </div>
       </div>
     );
+    blockLocation = "right";
   } else {
     obj = (
       <div className="header">
@@ -28,13 +34,21 @@ const StartPage: React.FC<StartPagePropsType> = (props) => {
         </div>
       </div>
     );
+    blockLocation = "left";
   }
-  // console.log(obj);
 
   return (
     <div className="wrapper">
-      <img src={bg1} alt="" />
-      {obj}
+      <img src={bgImg} alt="" />
+      <div className="wrapper-content">
+        {obj}
+        <InfoBlock
+          location={blockLocation}
+          blockColor={blockColor}
+          title={title}
+          message={message}
+        />
+      </div>
     </div>
   );
 };

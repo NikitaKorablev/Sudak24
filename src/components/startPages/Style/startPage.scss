@@ -1,4 +1,6 @@
 @import "../../assets/Variables/Variables.scss";
+$padding: 50px;
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -16,22 +18,99 @@
     z-index: 1;
   }
 
-  .header {
-    width: 100%;
-    height: auto;
-    // display: flex;
+  .wrapper-content {
     z-index: 2;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: inherit;
+  }
+
+  .wrapper-content .header {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    // display: flex;
     // background-color: $greenColor;
   }
-  .header .logo {
+  .wrapper-content .header .logo {
     width: auto;
     height: auto;
-    margin: 0 7% 0 5%;
-    font-size: 30px;
+    margin: 30px 7% 0 5%;
+
+    h1 {
+      font-size: 60px;
+    }
     // text-align: end;
     // background: $orangeColor;
     /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     // font-weight: bold;
+  }
+
+  .wrapper-content .sidebar {
+    border-radius: 15px;
+    height: auto;
+    width: auto;
+    display: flex;
+    // margin: 5px;
+    // background-color: green;
+
+    .sidebar-insides {
+      height: auto;
+      width: auto;
+      margin: 50px;
+      // margin-top: 70px;
+      // margin-bottom: 70px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar-insides h3 {
+      color: $whiteColor;
+      letter-spacing: 3px;
+      // line-height: 50px;
+      font-size: 40px;
+      padding-bottom: $padding;
+      margin-bottom: 0;
+    }
+
+    .sidebar-insides .sidebar-line {
+      @extend .line;
+      height: 1px;
+    }
+
+    .sidebar-insides .info {
+      color: $whiteColor;
+      width: 100%;
+      display: flex;
+      // flex-direction: column;
+    }
+    .sidebar-insides .info ul {
+      width: 100%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      li {
+        // padding-left: ;
+        padding-top: 80px;
+        font-size: 25px;
+        letter-spacing: 2px;
+      }
+    }
+    .sidebar-insides .info .p_block {
+      width: 400px;
+      height: auto;
+      // margin-top: 20px;
+      margin: auto;
+      display: flex;
+
+      p {
+        margin-top: 20px;
+        font-size: 25px;
+      }
+    }
   }
 }

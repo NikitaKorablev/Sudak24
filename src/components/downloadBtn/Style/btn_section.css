@@ -1,3 +1,28 @@
+.line {
+  height: 2px;
+  width: 100%;
+  background-color: white;
+}
+
+.foot_h {
+  font-size: 35px;
+  color: white;
+  margin: auto 0 0 0;
+}
+
+.foot_cont_text {
+  height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
 .wrapper-button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -24,12 +49,16 @@
   background-color: #ededf2c9;
   border-radius: 50px;
   border: none;
-  line-height: 10px;
   font-size: 30px;
 }
 
+.button button h3 {
+  font-size: 40px;
+  margin-bottom: 0;
+}
+
 .button button p {
-  line-height: 10px;
+  margin-bottom: 0;
 }
 
 .button button:hover {

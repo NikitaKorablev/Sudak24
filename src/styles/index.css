@@ -1,3 +1,28 @@
+.line, .footer-container .links .white_line, .footer-container .contacts .white_line {
+  height: 2px;
+  width: 100%;
+  background-color: white;
+}
+
+.foot_h, .footer-container .links h3, .footer-container .contacts h3 {
+  font-size: 35px;
+  color: white;
+  margin: auto 0 0 0;
+}
+
+.foot_cont_text, .footer-container .links .links_block, .footer-container .contacts .links_block {
+  height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
 *,
 *::after,
 *::before {
@@ -6,7 +31,16 @@
   padding: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-bottom: 0;
+}
+
 body {
+  min-height: 100vh;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,6 +51,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+#root {
+  height: calc(100% - 250px);
+}
+
 footer {
   height: 250px;
   background-color: #1d1d1d;
@@ -25,7 +63,7 @@ footer {
   display: flex;
 }
 
-.container {
+.footer-container {
   height: 70%;
   width: 90%;
   margin: auto;
@@ -35,7 +73,7 @@ footer {
   /* background-color: green; */
 }
 
-.container .links {
+.footer-container .links {
   height: 100%;
   width: 10%;
   margin-right: auto;
@@ -49,48 +87,58 @@ footer {
   padding-top: 0;
 }
 
-.container .links h3 {
-  font-size: 35px;
-  color: white;
-  margin: auto 0 0 0;
+.footer-container .links h3 {
+  line-height: 50px;
 }
 
-.container .links .white_line {
-  height: 2px;
-  width: 100%;
-  margin: auto;
-  background-color: white;
-}
-
-.container .links a {
-  width: auto;
+.footer-container .links .links_block a {
   height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   color: white;
   text-decoration: none;
   margin: auto 0;
 }
 
-.container .links a img {
+.footer-container .links .links_block a img {
   margin: auto 10px auto 0;
   height: 24px;
   width: 24px;
 }
 
-.container .links a p {
+.footer-container .links .links_block a p {
   font-size: 20px;
   height: 100%;
+  width: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   text-align: center;
+  margin-bottom: 0;
 }
 
-.container .contacts {
+.footer-container .contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100%;
   width: 50%;
-  background-color: green;
+}
+
+.footer-container .contacts h3 {
+  line-height: 50px;
+}
+
+.footer-container .contacts .links_block li {
+  list-style-type: none;
+  color: white;
+  margin-left: 0;
+  padding-left: 0;
+  margin: auto 0;
 }
 /*# sourceMappingURL=index.css.map */

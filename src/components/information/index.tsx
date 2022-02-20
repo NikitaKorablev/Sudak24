@@ -13,8 +13,6 @@ type AboutPropsType = {
 const About: React.FC<AboutPropsType> = (props) => {
   const { infoHeader, info, imgSrc, reverse } = props;
 
-  console.log(reverse);
-
   if (reverse === false || reverse === undefined) {
     return (
       <div className="info_block">

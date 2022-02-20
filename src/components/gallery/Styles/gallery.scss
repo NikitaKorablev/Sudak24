@@ -1,26 +1,26 @@
 @import "../../assets/Variables/Variables.scss";
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  z-index: 1;
-  height: 731px;
+$h-gallery: 80vh;
+
+.gallery_wrap {
+  height: 100vh;
   width: auto;
-  background-color: $whiteColor;
+  display: flex;
+  background-color: #ededf2;
+
+  .gallery {
+    height: 80vh;
+    width: 70vw;
+    margin: auto;
+  }
+
+  .carousel-item {
+    height: $h-gallery;
+  }
+  img {
+    height: 100% !important;
+  }
 }
-.wrapper .theme {
-  width: 60%;
-  margin: auto;
-  /* background-color: #333; */
-}
-.owl-item {
-  height: 60%;
-  /* width: auto; */
-  margin: auto;
-}
-#owl-demo .item img {
-  /* background-color: aqua; */
-  display: block;
-  width: 100%;
-  height: inherit;
-}
+
+// img {
+//   height: 800px !important;
+// }
