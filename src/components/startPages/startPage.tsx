@@ -15,6 +15,9 @@ type StartPagePropsType = {
 const StartPage: React.FC<StartPagePropsType> = (props) => {
   const { bgImg, location, logoColor, blockColor, title, message } = props;
 
+  const wp = document.getElementById("root");
+  console.log(wp?.clientWidth);
+
   let obj;
   let blockLocation;
   if (location === "right") {
@@ -39,7 +42,9 @@ const StartPage: React.FC<StartPagePropsType> = (props) => {
 
   return (
     <div className="wrapper">
+      {/* <div className="img-container"> */}
       <img src={bgImg} alt="" />
+      {/* </div> */}
       <div className="wrapper-content">
         {obj}
         <InfoBlock

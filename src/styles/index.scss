@@ -35,9 +35,12 @@ code {
 }
 
 footer {
-  height: 250px;
+  height: calc(110px + 140 * (100vw / 1920));
   background-color: rgb(29, 29, 29);
   display: flex;
+}
+.content {
+  min-width: 768px;
 }
 .footer-container {
   height: 70%;
@@ -48,7 +51,7 @@ footer {
 }
 .footer-container .links {
   height: 100%;
-  width: 10%;
+  width: 50%;
   margin-right: auto;
   // background-color: orange;
   display: flex;

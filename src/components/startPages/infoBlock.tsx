@@ -73,17 +73,17 @@ const InfoBlock: React.FC<InfoBlockPropsType> = (props) => {
   let styleWidth;
   if (location === "left") {
     styleWidth = {
-      marginTop: "50px",
-      marginLeft: "170px",
+      marginTop: "calc(5px + 45 * (100vw / 1920))",
+      marginLeft: "calc(2px + 168 * (100vw / 1920))",
       marginRight: "auto",
       backgroundColor: color1,
       boxShadow: `-4px -5px ${color2}, -8px -10px ${color3}`,
     };
   } else if (location === "right") {
     styleWidth = {
-      marginTop: "50px",
+      marginTop: "calc(5px + 135 * (100vw / 1920))",
       marginLeft: "auto",
-      marginRight: "170px",
+      marginRight: "calc(5px + 165 * (100vw / 1920))",
       backgroundColor: color1,
       boxShadow: `4px 5px ${color2}, 8px 10px ${color3}`,
     };

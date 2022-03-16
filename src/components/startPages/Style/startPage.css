@@ -24,6 +24,7 @@
 }
 
 .wrapper {
+  max-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,20 +32,23 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100vh;
-  width: 100%;
+  padding: 0 0 50% 0;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
   background-color: rgba(255, 166, 0, 0.877);
 }
 
 .wrapper img {
   width: 100%;
-  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 1;
 }
 
@@ -58,25 +62,24 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100vh;
-  width: inherit;
+  height: 100%;
+  width: 100%;
 }
 
 .wrapper .wrapper-content .header {
   width: 100%;
   height: auto;
-  margin-top: 20px;
 }
 
 .wrapper .wrapper-content .header .logo {
   width: auto;
   height: auto;
-  margin: 30px 7% 0 5%;
+  margin: calc(12px + 20 * (100vw / 1920)) 7% 0 calc(20px + 40 * (100vw / 1920));
   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 }
 
 .wrapper .wrapper-content .header .logo h1 {
-  font-size: 60px;
+  font-size: calc(5px + 55 * (100vw / 1920));
 }
 
 .wrapper .wrapper-content .sidebar {
@@ -91,7 +94,7 @@
 .wrapper .wrapper-content .sidebar .sidebar-insides {
   height: auto;
   width: auto;
-  margin: 50px;
+  margin: calc(10px + 40 * (100vw / 1920));
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -104,8 +107,8 @@
 .wrapper .wrapper-content .sidebar .sidebar-insides h3 {
   color: #fbfbfd;
   letter-spacing: 3px;
-  font-size: 40px;
-  padding-bottom: 50px;
+  font-size: calc(2px + 35 * (100vw / 1920));
+  padding-bottom: calc(1px + 49 * (100vw / 1920));
   margin-bottom: 0;
 }
 
@@ -132,16 +135,17 @@
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+  padding-left: calc(10px + 30 * (100vw / 1920));
 }
 
 .wrapper .wrapper-content .sidebar .sidebar-insides .info ul li {
-  padding-top: 80px;
-  font-size: 25px;
+  padding-top: calc(-2px + 82 * (100vw / 1920));
+  font-size: calc(1px + 24 * (100vw / 1920));
   letter-spacing: 2px;
 }
 
 .wrapper .wrapper-content .sidebar .sidebar-insides .info .p_block {
-  width: 400px;
+  width: calc(150px + 220 * (100vw / 1920));
   height: auto;
   margin: auto;
   display: -webkit-box;
@@ -151,6 +155,7 @@
 
 .wrapper .wrapper-content .sidebar .sidebar-insides .info .p_block p {
   margin-top: 20px;
-  font-size: 25px;
+  font-size: calc(8px + 17 * (100vw / 1920));
+  margin-bottom: 0;
 }
 /*# sourceMappingURL=startPage.css.map */
