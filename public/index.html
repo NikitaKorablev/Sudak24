@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="./assets/images/ship.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -34,36 +34,71 @@
     <div id="root"></div>
     <footer>
       <div class="footer-container">
-        <div class="links">
-          <h3>Соц. Сети</h3>
-          <div class="white_line"></div>
-          <div class="links_block">
-            <a href="#">
-              <img src="./vk.png" alt="" />
-              <p>lorem ipsum</p>
-            </a>
-            <a href="#">
-              <img src="./vk.png" alt="" />
-              <p>lorem ipsum</p>
-            </a>
-            <a href="#">
-              <img src="./insta.png" alt="" />
-              <p>lorem ipsum</p>
-            </a>
+        <div class="box">
+          <div class="links">
+            <h3>Соц. Сети</h3>
+            <div class="white_line"></div>
+            <div class="footer-block">
+              <a href="https://vk.com/karkas_sudak">
+                <img src="./assets/images/vk.png" alt="" />
+                <p>Каркасно-щитовые дома</p>
+              </a>
+              <a href="https://vk.com/nedvizd82">
+                <img src="./assets/images/vk.png" alt="" />
+                <p>МИР НЕДВИЖИМОСТИ</p>
+              </a>
+              <a href="https://instagram.com/nedviz82?utm_medium=copy_link">
+                <img src="./assets/images/insta.png" alt="" />
+                <p>nedviz82</p>
+              </a>
+            </div>
           </div>
         </div>
-
-        <div class="contacts">
-          <h3>Контакты</h3>
-          <div class="white_line"></div>
-          <ul class="links_block">
-            <li>Эксткурсии</li>
-            <li>Недвижимость</li>
-            <li>Размещение и отдых</li>
-            <li>Строительство домов</li>
-          </ul>
+        
+        <div class="box">
+          <div class="contacts">
+            <h3>Контакты</h3>
+            <div class="white_line"></div>
+            <div class="flex-box footer-block">
+              <ul class="section">
+                <li>Эксткурсии</li>
+                <li>Недвижимость</li>
+                <li>Размещение и отдых</li>
+                <li>Строительство домов</li>
+              </ul>
+              <ul class="section">
+                <li>+7 (978) 844-07-04</li>
+                <li>+7 (978) 551-73-42</li>
+                <li>+7 (978) 551-73-42</li>
+                <li>+7 (978) 845-79-35</li>
+              </ul>
+              <ul>
+                <li>+7 (978) 926-86-48</li>
+                <li>+7 (978) 740-34-69</li>
+                <li>+7 (978) 740-34-69</li>
+                <li>+7 (978) 119-83-35</li>
+              </ul>
+            </div>
+            
+          </div>
         </div>
+        
       </div>
     </footer>
   </body>
 </html>
+<!-- <script>
+  function LeftMargin(query) {
+    const box = document.getElementById("block");
+    if (query.mathes) {
+      box.style.marginLeft = "70px";
+    } else {
+      box.style.marginLeft = "calc(2px + 168 * (100vw / 1920))";
+    }
+  }
+  const query = window.matchMedia("(max-width: 768px)");
+  console.log(query);
+  // LeftMargin(query);
+  query.addListener(LeftMargin);
+  console.log("something");
+</script> -->

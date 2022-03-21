@@ -12,7 +12,6 @@ const InfoSection: React.FC<InfoSectionPropsType> = (props) => {
     <div className="info_section">
       <div className="info">
         <span>{headerInfo}</span>
-        <div className="space" />
         <p>{info}</p>
       </div>
     </div>

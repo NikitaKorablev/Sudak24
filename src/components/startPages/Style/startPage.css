@@ -75,11 +75,16 @@
   width: auto;
   height: auto;
   margin: calc(12px + 20 * (100vw / 1920)) 7% 0 calc(20px + 40 * (100vw / 1920));
-  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 }
 
 .wrapper .wrapper-content .header .logo h1 {
-  font-size: calc(5px + 55 * (100vw / 1920));
+  font-size: calc(10px + 50 * (100vw / 1920));
+}
+
+@media (max-width: 768px) {
+  .wrapper .wrapper-content .header .logo h1 {
+    font-size: 30px;
+  }
 }
 
 .wrapper .wrapper-content .sidebar {
@@ -89,6 +94,14 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (max-width: 768px) {
+  .wrapper .wrapper-content .sidebar {
+    margin-left: 70px !important;
+    margin-right: 70px !important;
+    margin-top: 22px !important;
+  }
 }
 
 .wrapper .wrapper-content .sidebar .sidebar-insides {
@@ -110,6 +123,20 @@
   font-size: calc(2px + 35 * (100vw / 1920));
   padding-bottom: calc(1px + 49 * (100vw / 1920));
   margin-bottom: 0;
+}
+
+@media (max-width: 1440px) {
+  .wrapper .wrapper-content .sidebar .sidebar-insides h3 {
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper .wrapper-content .sidebar .sidebar-insides h3 {
+    letter-spacing: 1px;
+    font-size: 17px;
+    padding-bottom: 20px;
+  }
 }
 
 .wrapper .wrapper-content .sidebar .sidebar-insides .sidebar-line {
@@ -138,24 +165,23 @@
   padding-left: calc(10px + 30 * (100vw / 1920));
 }
 
+@media (max-width: 768px) {
+  .wrapper .wrapper-content .sidebar .sidebar-insides .info ul {
+    padding-left: 20px;
+  }
+}
+
 .wrapper .wrapper-content .sidebar .sidebar-insides .info ul li {
   padding-top: calc(-2px + 82 * (100vw / 1920));
-  font-size: calc(1px + 24 * (100vw / 1920));
+  font-size: calc(0px + 24 * (100vw / 1920));
   letter-spacing: 2px;
 }
 
-.wrapper .wrapper-content .sidebar .sidebar-insides .info .p_block {
-  width: calc(150px + 220 * (100vw / 1920));
-  height: auto;
-  margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.wrapper .wrapper-content .sidebar .sidebar-insides .info .p_block p {
-  margin-top: 20px;
-  font-size: calc(8px + 17 * (100vw / 1920));
-  margin-bottom: 0;
+@media (max-width: 768px) {
+  .wrapper .wrapper-content .sidebar .sidebar-insides .info ul li {
+    font-size: 10px;
+    padding-top: 30px;
+    letter-spacing: 2px;
+  }
 }
 /*# sourceMappingURL=startPage.css.map */

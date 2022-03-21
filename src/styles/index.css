@@ -1,17 +1,17 @@
-.line, .footer-container .links .white_line, .footer-container .contacts .white_line {
-  height: 2px;
+.line, .box .links .white_line, .box .contacts .white_line {
+  height: calc(2px / 5);
   width: 100%;
+  margin: 1% 0;
   background-color: white;
 }
 
-.foot_h, .footer-container .links h3, .footer-container .contacts h3 {
-  font-size: 35px;
+.foot_h, .box .links h3, .box .contacts h3 {
+  font-size: calc(2px + 33 * (100vw / 1920));
   color: white;
-  margin: auto 0 0 0;
+  margin-bottom: 0 !important;
 }
 
-.foot_cont_text, .footer-container .links .links_block, .footer-container .contacts .links_block {
-  height: 120px;
+.foot_cont_text, .footer-block, .box .contacts ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,35 +52,53 @@ code {
 }
 
 #root {
-  height: calc(100% - 250px);
-}
-
-footer {
-  height: calc(110px + 140 * (100vw / 1920));
-  background-color: #1d1d1d;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  height: calc(100% - (100% / 8));
 }
 
 .content {
   min-width: 768px;
 }
 
+footer {
+  min-width: 768px;
+  max-height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 calc(100% / 8) 0;
+}
+
 .footer-container {
-  height: 70%;
-  width: 90%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: #1d1d1d;
   /* background-color: green; */
 }
 
-.footer-container .links {
-  height: 100%;
+.footer-container .box {
   width: 50%;
-  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.box .links {
+  width: auto;
+  height: auto;
+  margin: calc(-7px + 44.5 * (100vw / 1920)) auto auto 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,11 +109,11 @@ footer {
   padding-top: 0;
 }
 
-.footer-container .links h3 {
-  line-height: 50px;
+.footer-block {
+  font-size: calc(2px + 18 * (100vw / 1920));
 }
 
-.footer-container .links .links_block a {
+.box .links .footer-block a {
   height: auto;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -105,24 +123,24 @@ footer {
   margin: auto 0;
 }
 
-.footer-container .links .links_block a img {
+.box .links .footer-block a img {
   margin: auto 10px auto 0;
-  height: 24px;
-  width: 24px;
+  height: auto;
+  width: calc(8px + 16 * (100vw / 1920));
 }
 
-.footer-container .links .links_block a p {
-  font-size: 20px;
+.box .links .footer-block a p {
   height: 100%;
   width: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   text-align: center;
+  margin: auto 0;
   margin-bottom: 0;
 }
 
-.footer-container .contacts {
+.box .contacts {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -130,15 +148,26 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100%;
-  width: 50%;
+  height: auto;
+  width: auto;
+  margin: calc(-7px + 44.5 * (100vw / 1920)) auto auto 0;
 }
 
-.footer-container .contacts h3 {
-  line-height: 50px;
+.box .contacts .flex-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: unset !important;
+  -webkit-box-direction: unset !important;
+      -ms-flex-direction: unset !important;
+          flex-direction: unset !important;
 }
 
-.footer-container .contacts .links_block li {
+.box .contacts .flex-box .section {
+  padding-right: 30px;
+}
+
+.box .contacts ul li {
   list-style-type: none;
   color: white;
   margin-left: 0;

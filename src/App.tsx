@@ -7,7 +7,7 @@ import Gallery from "./components/gallery/gallery";
 import bg1 from "./components/assets/images/bg-image1.png";
 import bg2 from "./components/assets/images/bg-image2.png";
 
-const aboutText =
+const aboutText: string =
   "Lorem ipsum, dolor sit amet consectetur adipisicing elit. \
 Nisi illum ex ad nemo rerum at, inventore numquam pariatur optio odit quidem labore aspernatur.\
 Dolorum veritatis quas odio, recusandae vero explicabo. \
@@ -29,20 +29,19 @@ const App = () => {
         title="Экскурсии по крыму"
         message={mess1}
       />
-      <About infoHeader="Кто мы?" info={aboutText} imgSrc={miniHouse} />
-      <Gallery />
-      <DownloadBtn title="Экскурсии по Крыму" name="1" />
-      <StartPage
+      {/* <Gallery /> */}
+      {/* <DownloadBtn title="Экскурсии по Крыму" name="1" /> */}
+      {/* <StartPage
         bgImg={bg2}
         location="right"
         logoColor="white"
         blockColor="green"
         title="Аренда недвижимости"
         message={mess2}
-      />
-      <About infoHeader="Кто мы?" info={aboutText} imgSrc={miniHouse} reverse />
-      <Gallery />
-      <DownloadBtn title="Аренда недвижимости" name="2" />
+      /> */}
+      {/* <Gallery /> */}
+      {/* <DownloadBtn title="Аренда недвижимости" name="2" /> */}
+      <About infoHeader="Кто мы?" info={aboutText} imgSrc={miniHouse} />
     </div>
   );
 };

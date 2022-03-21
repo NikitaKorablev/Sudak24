@@ -1,5 +1,6 @@
 import React from "react";
 import parse from "html-react-parser";
+// import Margin from "./index.js";
 
 const blue = {
   color1: "rgb(7, 5, 35)",
@@ -70,27 +71,56 @@ const InfoBlock: React.FC<InfoBlockPropsType> = (props) => {
     mess = letter(message);
   }
 
+  // type CSSProps = {
+  //   marginTop: "calc(5px + 45 * (100vw / 1920))";
+  //   marginLeft: "calc(2px + 168 * (100vw / 1920))" | "auto";
+  //   marginRight: "calc(5px + 165 * (100vw / 1920))" | "auto";
+  //   backgroundColor: any;
+  //   boxShadow: any;
+  // };
+
+  // const test: CSSProps = {
+  //   marginTop: "calc(5px + 45 * (100vw / 1920))",
+  //   marginLeft: "calc(2px + 168 * (100vw / 1920))",
+  //   marginRight: "auto !important" as any,
+  //   backgroundColor: color1,
+  //   boxShadow: `-4px -5px ${color2}, -8px -10px ${color3}`,
+  // };
+
+  // const ref = useRef(null);
+
+  // useLayoutEffect(() => {
+  //   ref.style.setProperty("margin-right", "auto", "important");
+  // }, []);
+
   let styleWidth;
+  let ref;
   if (location === "left") {
     styleWidth = {
       marginTop: "calc(5px + 45 * (100vw / 1920))",
       marginLeft: "calc(2px + 168 * (100vw / 1920))",
-      marginRight: "auto",
+      // marginRight: "auto",
       backgroundColor: color1,
       boxShadow: `-4px -5px ${color2}, -8px -10px ${color3}`,
+    };
+    ref = (el: any) => {
+      el.style.setProperty("margin-right", "auto", "important");
     };
   } else if (location === "right") {
     styleWidth = {
       marginTop: "calc(5px + 135 * (100vw / 1920))",
-      marginLeft: "auto",
+      // marginLeft: "auto",
       marginRight: "calc(5px + 165 * (100vw / 1920))",
       backgroundColor: color1,
       boxShadow: `4px 5px ${color2}, 8px 10px ${color3}`,
     };
+    ref = (el: any) => {
+      el && el.style.setProperty("margin-left", "auto", "important");
+    };
   }
 
   return (
-    <div className="sidebar" style={styleWidth}>
+    <div id="block" className="sidebar" ref={ref} style={styleWidth}>
       <div className="sidebar-insides">
         <h3>{title}</h3>
         <div className="sidebar-line" style={{ backgroundColor: "white" }} />

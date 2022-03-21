@@ -4,23 +4,25 @@ $orangeColor: rgba(255, 166, 0, 0.877);
 $greenColor: rgb(45, 177, 45);
 $coldGrey: #edeef2;
 $greyColor: rgba(163, 163, 163, 0.911);
-$size: 24px;
 
 .line {
-  height: 2px;
+  height: calc(2px / 5);
   width: 100%;
+  margin: 1% 0;
   // margin: auto;
   background-color: white;
 }
 
 .foot_h {
-  font-size: 35px;
+  font-size: calc(2px + 33 * (100vw / 1920));
   color: white;
-  margin: auto 0 0 0;
+  margin-bottom: 0 !important;
+  // margin-block-start: 0 !important;
+  // margin: auto 0 0 0;
 }
 
 .foot_cont_text {
-  height: 120px;
+  // height: 120px;
   display: flex;
   flex-direction: column;
   margin-bottom: 0;

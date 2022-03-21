@@ -48,7 +48,8 @@
     "no-else-return": "off",
     "guard-for-in": "off",
     "no-restricted-syntax": "off",
-    "arrow-body-style": "off"
+    "arrow-body-style": "off",
+    "no-unused-expressions": "off"
     // "jsx-a11y/anchor-has-content": "off",
     // "jsx-a11y/anchor-is-valid": "off"
   }
