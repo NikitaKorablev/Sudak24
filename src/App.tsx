@@ -29,8 +29,8 @@ const App = () => {
         title="Экскурсии по крыму"
         message={mess1}
       />
-      {/* <Gallery /> */}
-      {/* <DownloadBtn title="Экскурсии по Крыму" name="1" /> */}
+      <Gallery />
+      <DownloadBtn title="Экскурсии по Крыму" name="1" />
       {/* <StartPage
         bgImg={bg2}
         location="right"

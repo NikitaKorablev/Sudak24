@@ -1,7 +1,6 @@
 .line, .box .links .white_line, .box .contacts .white_line {
   height: calc(2px / 5);
   width: 100%;
-  margin: 1% 0;
   background-color: white;
 }
 
@@ -9,6 +8,12 @@
   font-size: calc(2px + 33 * (100vw / 1920));
   color: white;
   margin-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .foot_h, .box .links h3, .box .contacts h3 {
+    font-size: 16px !important;
+  }
 }
 
 .foot_cont_text, .footer-block, .box .contacts ul {
@@ -71,7 +76,13 @@ footer {
           flex-direction: column;
   position: relative;
   overflow: hidden;
-  padding: 0 0 calc(100% / 8) 0;
+  padding: calc(5px + 115 * (100vw / 1920));
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 50px;
+  }
 }
 
 .footer-container {
@@ -85,10 +96,17 @@ footer {
   display: -ms-flexbox;
   display: flex;
   background-color: #1d1d1d;
-  /* background-color: green; */
 }
 
-.footer-container .box {
+.footer-container .mini-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+
+.footer-container .mini-container .box {
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -98,7 +116,7 @@ footer {
 .box .links {
   width: auto;
   height: auto;
-  margin: calc(-7px + 44.5 * (100vw / 1920)) auto auto 10%;
+  margin: 0 auto 0 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -111,6 +129,12 @@ footer {
 
 .footer-block {
   font-size: calc(2px + 18 * (100vw / 1920));
+}
+
+@media (max-width: 768px) {
+  .footer-block {
+    font-size: 9px !important;
+  }
 }
 
 .box .links .footer-block a {
@@ -129,6 +153,12 @@ footer {
   width: calc(8px + 16 * (100vw / 1920));
 }
 
+@media (max-width: 768px) {
+  .box .links .footer-block a img {
+    width: 15px;
+  }
+}
+
 .box .links .footer-block a p {
   height: 100%;
   width: auto;
@@ -136,6 +166,9 @@ footer {
   display: -ms-flexbox;
   display: flex;
   text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: auto 0;
   margin-bottom: 0;
 }
@@ -150,7 +183,7 @@ footer {
           flex-direction: column;
   height: auto;
   width: auto;
-  margin: calc(-7px + 44.5 * (100vw / 1920)) auto auto 0;
+  margin: 0 auto 0 0;
 }
 
 .box .contacts .flex-box {

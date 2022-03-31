@@ -1,17 +1,22 @@
 .line {
-  height: 2px;
+  height: calc(2px / 5);
   width: 100%;
   background-color: white;
 }
 
 .foot_h {
-  font-size: 35px;
+  font-size: calc(2px + 33 * (100vw / 1920));
   color: white;
-  margin: auto 0 0 0;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .foot_h {
+    font-size: 16px !important;
+  }
 }
 
 .foot_cont_text {
-  height: 120px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24,7 +29,16 @@
 }
 
 .gallery_wrap {
-  height: 100vh;
+  height: 830px;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #ededf2;
+}
+
+.gallery_wrap .whall {
+  height: 830px;
   width: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -33,9 +47,23 @@
 }
 
 .gallery_wrap .gallery {
-  height: 80vh;
+  height: auto;
   width: 70vw;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.gallery_wrap .carousel {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.gallery_wrap .carousel-inner {
+  height: auto;
 }
 
 .gallery_wrap .carousel-item {
@@ -43,6 +71,6 @@
 }
 
 .gallery_wrap img {
-  height: 100% !important;
+  height: 664px;
 }
 /*# sourceMappingURL=gallery.css.map */

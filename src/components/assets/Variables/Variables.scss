@@ -8,7 +8,7 @@ $greyColor: rgba(163, 163, 163, 0.911);
 .line {
   height: calc(2px / 5);
   width: 100%;
-  margin: 1% 0;
+  // margin: 1% 0;
   // margin: auto;
   background-color: white;
 }
@@ -17,6 +17,11 @@ $greyColor: rgba(163, 163, 163, 0.911);
   font-size: calc(2px + 33 * (100vw / 1920));
   color: white;
   margin-bottom: 0 !important;
+  // line-height: auto;
+  @media (max-width: 768px) {
+    font-size: 16px !important;
+  }
+
   // margin-block-start: 0 !important;
   // margin: auto 0 0 0;
 }

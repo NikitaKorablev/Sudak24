@@ -45,8 +45,11 @@ footer {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  padding: 0 0 calc(100% / 8) 0;
-
+  // padding: 50px;
+  padding: calc(5px + 115 * (100vw / 1920));
+  @media(max-width: 768px) {
+    padding: 50px;
+  }
   // height: calc(110px + 140 * (100vw / 1920));
 }
 
@@ -59,17 +62,26 @@ footer {
   margin: auto;
   display: flex;
   background-color: rgb(29, 29, 29);
-  /* background-color: green; */
+  // background-color: green;
 }
 
-.footer-container .box {
+.footer-container .mini-container {
+  display: flex;
+  width: 100%;
+  // background-color: green;
+  margin: auto;
+}
+
+.footer-container .mini-container .box {
+  // height: auto;
   width: 50%;
   display: flex;
 }
 .box .links {
   width: auto;
   height: auto;
-  margin: calc(-7px + 44.5 * (100vw / 1920)) auto auto 10%; // 37.5
+  // margin: calc(-7px + 44.5 * (100vw / 1920)) auto auto 10%; // 37.5
+  margin: 0 auto 0 10%;
   display: flex;
   flex-direction: column;
   padding-top: 0;
@@ -84,6 +96,10 @@ footer {
 .footer-block {
   @extend .foot_cont_text;
   font-size: calc(2px + 18 * (100vw / 1920));
+  @media (max-width: 768px) {
+    font-size: 9px !important;
+  }
+
   // display: flex;
 }
 .box .links .footer-block a {
@@ -97,6 +113,10 @@ footer {
     margin: auto 10px auto 0;
     height: auto;
     width: calc(8px + 16 * (100vw / 1920)); // 15
+    @media (max-width: 768px) {
+      width: 15px;
+    }
+
     // background-color: black;
   }
   p {
@@ -105,6 +125,11 @@ footer {
     width: auto;
     display: flex;
     text-align: center;
+    align-items: center;
+    // position: absolute;
+    // top: 50%;
+    // height: auto;
+    // vertical-align: middle;
     margin: auto 0;
     margin-bottom: 0;
   }
@@ -116,7 +141,8 @@ footer {
   // height: 100%;
   height: auto;
   width: auto;
-  margin: calc(-7px + 44.5 * (100vw / 1920)) auto auto 0;
+  // margin: calc(-7px + 44.5 * (100vw / 1920)) auto auto 0;
+  margin: 0 auto 0 0;
   // background-color: green;
 
   h3 {

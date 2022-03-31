@@ -1,17 +1,17 @@
 .line {
-  height: 2px;
+  height: calc(2px / 5);
   width: 100%;
+  margin: 1% 0;
   background-color: white;
 }
 
 .foot_h {
-  font-size: 35px;
+  font-size: calc(2px + 33 * (100vw / 1920));
   color: white;
   margin-bottom: 0 !important;
 }
 
 .foot_cont_text {
-  height: 120px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -2,22 +2,44 @@
 $h-gallery: 80vh;
 
 .gallery_wrap {
-  height: 100vh;
+  // height: 100vh;
+  // max-height: 100vh;
+  // display flex
+
+  height: 830px;
   width: auto;
   display: flex;
   background-color: #ededf2;
 
+  .whall {
+    height: 830px;
+    width: auto;
+    display: flex;
+    background-color: #ededf2;
+  }
+
   .gallery {
-    height: 80vh;
+    height: auto;
     width: 70vw;
     margin: auto;
+    display: flex;
+  }
+
+  .carousel {
+    height: auto;
+    display: flex;
+  }
+
+  .carousel-inner {
+    height: auto;
   }
 
   .carousel-item {
     height: $h-gallery;
   }
   img {
-    height: 100% !important;
+    // height: 100% !important;
+    height: 664px;
   }
 }
 

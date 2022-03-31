@@ -1,7 +1,6 @@
 .line {
   height: calc(2px / 5);
   width: 100%;
-  margin: 1% 0;
   background-color: white;
 }
 
@@ -9,6 +8,12 @@
   font-size: calc(2px + 33 * (100vw / 1920));
   color: white;
   margin-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .foot_h {
+    font-size: 16px !important;
+  }
 }
 
 .foot_cont_text {
