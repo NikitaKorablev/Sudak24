@@ -72,22 +72,28 @@
       color: $whiteColor;
       letter-spacing: 3px;
       font-size: calc(2px + 35 * (100vw / 1920));
-      padding-bottom: calc(1px + 49 * (100vw / 1920));
+      // height: auto;
+      // font-size: auto;
       margin-bottom: 0;
+      padding-bottom: calc(1px + 49 * (100vw / 1920));
+      // margin-bottom: 0;
 
-      @media (max-width: 1440px) {
-        letter-spacing: 2px;
-      }
+      // @media (max-width: 1440px) {
+      //   letter-spacing: 2px;
+      // }
       @media (max-width: 768px) {
         letter-spacing: 1px;
-        font-size: 17px;
+        font-size: 17px !important;
         padding-bottom: 20px;
       }
+
+
     }
 
     .sidebar-insides .sidebar-line {
       @extend .line;
       height: 1px;
+      margin: 4px 0;
     }
 
     .sidebar-insides .info {
@@ -119,5 +125,10 @@
         }
       }
     }
+    .sidebar-insides .info p {
+      font-size: 10px;
+      margin-bottom: 0;
+    }
   }
 }
+

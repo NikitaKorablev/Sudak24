@@ -28,7 +28,7 @@
     "quotes": ["error", "double"],
     // "quotes": ["error", "single"],
     "no-use-before-define": "off",
-    "no-unused-vars": "warn",
+    "no-unused-vars": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "react/jsx-runtime": "off",
     "react/react-in-jsx-scope": "off",
@@ -49,7 +49,11 @@
     "guard-for-in": "off",
     "no-restricted-syntax": "off",
     "arrow-body-style": "off",
-    "no-unused-expressions": "off"
+    "no-unused-expressions": "off",
+    "no-plusplus": "off",
+    "no-console":"off",
+    "consistent-return":"off",
+    "import/no-dynamic-require": "off"
     // "jsx-a11y/anchor-has-content": "off",
     // "jsx-a11y/anchor-is-valid": "off"
   }

@@ -13,15 +13,17 @@ const DownloadBtn: React.FC<DownloadBtnPropsType> = (props) => {
 
   return (
     <div className="wrapper-button">
-      <div className="button">
-        <button type="button" onClick={() => clickMe(name)}>
-          <h3>ПРАЙС-ЛИСТ</h3>
-          <p>{title}</p>
-          <p>Загрузить</p>
-        </button>
-      </div>
-      <div className="lines">
-        <img src={lines} alt="" className="svg-lines" id="svg-lines" />
+      <div className="button-whall">
+        <div className="button">
+          <button type="button" onClick={() => clickMe(name)}>
+            <h3>ПРАЙС-ЛИСТ</h3>
+            <p>{title}</p>
+            <p>Загрузить</p>
+          </button>
+        </div>
+        <div className="lines">
+          <img src={lines} alt="" className="svg-lines" id="svg-lines" />
+        </div>
       </div>
     </div>
   );

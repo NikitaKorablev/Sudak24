@@ -47,6 +47,7 @@ footer {
   overflow: hidden;
   // padding: 50px;
   padding: calc(5px + 115 * (100vw / 1920));
+  // padding: 0 0 50%
   @media(max-width: 768px) {
     padding: 50px;
   }

@@ -2,47 +2,54 @@
 $h-gallery: 80vh;
 
 .gallery_wrap {
-  // height: 100vh;
-  // max-height: 100vh;
-  // display flex
-
-  height: 830px;
-  width: auto;
+  max-height: 100vh;
   display: flex;
-  background-color: #ededf2;
+  padding: 0 0 50% 0;
+  position: relative;
 
   .whall {
-    height: 830px;
-    width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     display: flex;
-    background-color: #ededf2;
+    background-color: $coldGrey;
   }
 
   .gallery {
-    height: auto;
-    width: 70vw;
+    height: 80%;
+    width: 70%;
     margin: auto;
-    display: flex;
   }
 
   .carousel {
-    height: auto;
+    height: 100%;
+    width: 100%;
     display: flex;
   }
 
   .carousel-inner {
-    height: auto;
+    height: inherit;
+    width: inherit;
+
+    .carousel-item {
+      max-height: 100%;
+      height: inherit;
+      width: inherit;
+      // display: flex;
+    }
   }
 
-  .carousel-item {
-    height: $h-gallery;
-  }
   img {
-    // height: 100% !important;
-    height: 664px;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    // max-height: 100%;
+    // width: auto;
   }
 }
 
-// img {
-//   height: 800px !important;
-// }
+

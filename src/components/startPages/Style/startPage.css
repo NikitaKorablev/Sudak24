@@ -1,7 +1,6 @@
 .line, .wrapper .wrapper-content .sidebar .sidebar-insides .sidebar-line {
   height: calc(2px / 5);
   width: 100%;
-  margin: 1% 0;
   background-color: white;
 }
 
@@ -9,6 +8,12 @@
   font-size: calc(2px + 33 * (100vw / 1920));
   color: white;
   margin-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .foot_h {
+    font-size: 16px !important;
+  }
 }
 
 .foot_cont_text {
@@ -121,26 +126,21 @@
   color: #fbfbfd;
   letter-spacing: 3px;
   font-size: calc(2px + 35 * (100vw / 1920));
-  padding-bottom: calc(1px + 49 * (100vw / 1920));
   margin-bottom: 0;
-}
-
-@media (max-width: 1440px) {
-  .wrapper .wrapper-content .sidebar .sidebar-insides h3 {
-    letter-spacing: 2px;
-  }
+  padding-bottom: calc(1px + 49 * (100vw / 1920));
 }
 
 @media (max-width: 768px) {
   .wrapper .wrapper-content .sidebar .sidebar-insides h3 {
     letter-spacing: 1px;
-    font-size: 17px;
+    font-size: 17px !important;
     padding-bottom: 20px;
   }
 }
 
 .wrapper .wrapper-content .sidebar .sidebar-insides .sidebar-line {
   height: 1px;
+  margin: 4px 0;
 }
 
 .wrapper .wrapper-content .sidebar .sidebar-insides .info {
@@ -183,5 +183,10 @@
     padding-top: 30px;
     letter-spacing: 2px;
   }
+}
+
+.wrapper .wrapper-content .sidebar .sidebar-insides .info p {
+  font-size: 10px;
+  margin-bottom: 0;
 }
 /*# sourceMappingURL=startPage.css.map */

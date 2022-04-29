@@ -29,15 +29,13 @@ const list = (message: any) => {
 };
 
 const letter = (message: string) => {
-  const pBlock = document.createElement("div");
+  const div = document.createElement("div");
   const p = document.createElement("p");
 
-  pBlock.className = "p_block";
+  div.className = "p_block";
   p.textContent = message;
-  pBlock.appendChild(p);
+  div.appendChild(p);
 
-  const div = document.createElement("div");
-  div.appendChild(pBlock);
   return parse(div.innerHTML);
 };
 
@@ -95,6 +93,9 @@ const InfoBlock: React.FC<InfoBlockPropsType> = (props) => {
 
   let styleWidth;
   let ref;
+  let h3;
+  let h3Imp;
+  let p;
   if (location === "left") {
     styleWidth = {
       marginTop: "calc(5px + 45 * (100vw / 1920))",
@@ -103,16 +104,32 @@ const InfoBlock: React.FC<InfoBlockPropsType> = (props) => {
       backgroundColor: color1,
       boxShadow: `-4px -5px ${color2}, -8px -10px ${color3}`,
     };
+    h3 = {
+      textAlign: "center" as const,
+    };
+    // h3Imp = {};
     ref = (el: any) => {
       el.style.setProperty("margin-right", "auto", "important");
     };
   } else if (location === "right") {
     styleWidth = {
+      width: "30%",
       marginTop: "calc(5px + 135 * (100vw / 1920))",
       // marginLeft: "auto",
       marginRight: "calc(5px + 165 * (100vw / 1920))",
       backgroundColor: color1,
       boxShadow: `4px 5px ${color2}, 8px 10px ${color3}`,
+    };
+    h3 = {
+      textAlign: "center" as const,
+    };
+    h3Imp = (el: any) => {
+      el.style.setProperty(
+        "font-size",
+        "calc(-8px + 43 * (100vw / 1920))",
+        "important"
+      );
+      el.style.setProperty("padding-bottom", "0", "important");
     };
     ref = (el: any) => {
       el && el.style.setProperty("margin-left", "auto", "important");
@@ -122,7 +139,9 @@ const InfoBlock: React.FC<InfoBlockPropsType> = (props) => {
   return (
     <div id="block" className="sidebar" ref={ref} style={styleWidth}>
       <div className="sidebar-insides">
-        <h3>{title}</h3>
+        <h3 ref={h3Imp} style={h3}>
+          {title}
+        </h3>
         <div className="sidebar-line" style={{ backgroundColor: "white" }} />
         <div className="info">{mess}</div>
       </div>
