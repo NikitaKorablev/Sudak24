@@ -110,14 +110,14 @@ footer {
   text-decoration: none;
   margin: auto 0; // 1px
 
-  img {
-    margin: auto 10px auto 0;
+  .img {
+    margin: auto 0;
     height: auto;
-    width: calc(8px + 16 * (100vw / 1920)); // 15
+    width: calc(10px + 14 * (100vw / 1920)); // 15
     @media (max-width: 768px) {
       width: 15px;
     }
-
+    display: flex;
     // background-color: black;
   }
   p {

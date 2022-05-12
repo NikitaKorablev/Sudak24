@@ -18,7 +18,9 @@ const list = (message: any) => {
 
   message.forEach((m: string | null) => {
     const li = document.createElement("li");
-    li.textContent = m;
+    const h2 = document.createElement("h2");
+    h2.textContent = m;
+    li.appendChild(h2);
     ul.appendChild(li);
   });
 
@@ -139,9 +141,9 @@ const InfoBlock: React.FC<InfoBlockPropsType> = (props) => {
   return (
     <div id="block" className="sidebar" ref={ref} style={styleWidth}>
       <div className="sidebar-insides">
-        <h3 ref={h3Imp} style={h3}>
+        <h1 ref={h3Imp} style={h3}>
           {title}
-        </h3>
+        </h1>
         <div className="sidebar-line" style={{ backgroundColor: "white" }} />
         <div className="info">{mess}</div>
       </div>

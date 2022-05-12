@@ -13,7 +13,7 @@ const Gallery: React.FC<GalleryPropsType> = (props) => {
 
   let img;
   if (images === undefined) {
-    img = [require("../assets/images/nonImage.jpg")];
+    img = [require("../assets/images/nonImage.webp")];
   } else {
     img = images;
   }

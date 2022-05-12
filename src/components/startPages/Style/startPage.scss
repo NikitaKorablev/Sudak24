@@ -8,7 +8,7 @@
   position: relative;
   z-index: 0;
   overflow: hidden;
-  background-color: $orangeColor;
+  background-color: $coldGrey;
 
   img {
     width: 100%;
@@ -68,7 +68,7 @@
       flex-direction: column;
     }
 
-    .sidebar-insides h3 {
+    .sidebar-insides h1 {
       color: $whiteColor;
       letter-spacing: 3px;
       font-size: calc(2px + 35 * (100vw / 1920));
@@ -113,7 +113,7 @@
         padding-left: 20px;
       }
 
-      li {
+      li h2 {
         padding-top: calc(-2px + 82 * (100vw / 1920));
         font-size: calc(0px + 24 * (100vw / 1920));
         letter-spacing: 2px;

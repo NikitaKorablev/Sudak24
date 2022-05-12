@@ -147,14 +147,17 @@ footer {
   margin: auto 0;
 }
 
-.box .links .footer-block a img {
-  margin: auto 10px auto 0;
+.box .links .footer-block a .img {
+  margin: auto 0;
   height: auto;
-  width: calc(8px + 16 * (100vw / 1920));
+  width: calc(10px + 14 * (100vw / 1920));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media (max-width: 768px) {
-  .box .links .footer-block a img {
+  .box .links .footer-block a .img {
     width: 15px;
   }
 }

@@ -2,22 +2,29 @@
 import fs from "fs";
 // import fs-react from "fs-react";
 import About from "./components/information/index";
-import miniHouse from "./components/assets/images/house.png";
+import miniHouse from "./components/assets/images/house.webp";
 import StartPage from "./components/startPages/startPage";
 import DownloadBtn from "./components/downloadBtn/downloadBtn";
 import Gallery from "./components/gallery/gallery";
-import bg1 from "./components/assets/images/bg-image1.png";
-import bg2 from "./components/assets/images/bg-image2.png";
+import bg1 from "./components/assets/images/bg-image1.webp";
+import bg3 from "./components/assets/images/bg-image3.webp";
+import bg4 from "./components/assets/images/bg-image4.webp";
 
-const arr: any[] = []; // Экскурсии || Аренда || Сдача жилья || Строитеьство
-const names = ["Жильё", "Строительство", "", ""];
-const len = [3, 5, 0, 0];
+const arr: any[] = []; // Экскурсии || Продажа недвижимости || Сдача жилья || Строитеьство
+//-----------------------------------------------------
+const names = ["Экскурсии", "Продажа недвижимости", "Жильё", "Строительство"];
+const len = [7, 0, 7, 4];
+//-----------------------------------------------------
 
 const adress = (adr: string) => {
   for (let i = 0; i < 4; i++) {
     arr[i] = [];
-    for (let j = 0; j < len[i]; j++) {
-      arr[i][j] = require(`${adr + names[i]}/${j}.jpg`);
+    if (len[i] !== 0) {
+      for (let j = 0; j < len[i]; j++) {
+        arr[i][j] = require(`${adr + names[i]}/${j}.webp`);
+      }
+    } else {
+      arr[i] = undefined;
     }
   }
   return arr;
@@ -55,37 +62,37 @@ const App = () => {
         title="Экскурсии по крыму"
         message={mess1}
       />
-      <Gallery />
+      <Gallery images={adr[0]} />
       <DownloadBtn title="Экскурсии по Крыму" name="Прайс_экскурсии" />
       <StartPage
-        bgImg={bg2}
+        bgImg={bg1}
         location="right"
         logoColor="white"
-        blockColor="green"
+        blockColor="blue"
         title="Аренда недвижимости"
         message={mess2}
       />
-      <Gallery />
+      <Gallery images={adr[1]} />
       <DownloadBtn title="Аренда недвижимости" name="Прайс_продажа_покупка" />
       <StartPage
-        bgImg={bg1}
-        location="left"
+        bgImg={bg3}
+        location="right"
         logoColor="white"
-        blockColor="blue"
+        blockColor="green"
         title="Сдача жилья"
-        message={mess1}
+        message={mess2}
       />
-      <Gallery images={adr[0]} />
+      <Gallery images={adr[2]} />
       <DownloadBtn title="Сдача жилья" name="Прайс_сдача" />
       <StartPage
-        bgImg={bg1}
-        location="left"
+        bgImg={bg4}
+        location="right"
         logoColor="white"
         blockColor="blue"
         title="Строительство домов"
-        message={mess1}
+        message={mess2}
       />
-      <Gallery images={adr[1]} />
+      <Gallery images={adr[3]} />
       <DownloadBtn title="Строительство домов" name="Прайс_строительство" />
       <About infoHeader="Кто мы?" info={aboutText} imgSrc={miniHouse} />
     </div>
