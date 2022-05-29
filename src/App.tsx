@@ -12,7 +12,12 @@ import bg4 from "./components/assets/images/bg-image4.webp";
 
 const arr: any[] = []; // Экскурсии || Продажа недвижимости || Сдача жилья || Строитеьство
 //-----------------------------------------------------
-const names = ["Экскурсии", "Продажа недвижимости", "Жильё", "Строительство"];
+const names = [
+  "Экскурсии по Крыму",
+  "Продажа недвижимости",
+  "Сдача жилья",
+  "Строительство домов",
+];
 const len = [7, 0, 7, 4];
 //-----------------------------------------------------
 
@@ -59,41 +64,41 @@ const App = () => {
         location="left"
         logoColor="white"
         blockColor="blue"
-        title="Экскурсии по крыму"
+        title={names[0]}
         message={mess1}
       />
       <Gallery images={adr[0]} />
-      <DownloadBtn title="Экскурсии по Крыму" name="Прайс_экскурсии" />
+      <DownloadBtn title={names[0]} name="Прайс_экскурсии" />
       <StartPage
         bgImg={bg1}
         location="right"
         logoColor="white"
         blockColor="blue"
-        title="Аренда недвижимости"
+        title={names[1]}
         message={mess2}
       />
       <Gallery images={adr[1]} />
-      <DownloadBtn title="Аренда недвижимости" name="Прайс_продажа_покупка" />
+      <DownloadBtn title={names[1]} name="Прайс_продажа_покупка" />
       <StartPage
         bgImg={bg3}
         location="right"
         logoColor="white"
         blockColor="green"
-        title="Сдача жилья"
+        title={names[2]}
         message={mess2}
       />
       <Gallery images={adr[2]} />
-      <DownloadBtn title="Сдача жилья" name="Прайс_сдача" />
+      <DownloadBtn title={names[2]} name="Прайс_сдача" />
       <StartPage
         bgImg={bg4}
         location="right"
         logoColor="white"
         blockColor="blue"
-        title="Строительство домов"
+        title={names[3]}
         message={mess2}
       />
       <Gallery images={adr[3]} />
-      <DownloadBtn title="Строительство домов" name="Прайс_строительство" />
+      <DownloadBtn title={names[3]} name="Прайс_строительство" />
       <About infoHeader="Кто мы?" info={aboutText} imgSrc={miniHouse} />
     </div>
   );
