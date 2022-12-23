@@ -8,6 +8,8 @@ type InfoSectionPropsType = {
 const InfoSection: React.FC<InfoSectionPropsType> = (props) => {
   const { headerInfo, info } = props;
 
+  console.log(info);
+
   return (
     <div className="info_section">
       <div className="info">

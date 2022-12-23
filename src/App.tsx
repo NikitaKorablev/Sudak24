@@ -38,13 +38,11 @@ const adress = (adr: string) => {
 const App = () => {
   const adr = adress("./components/assets/images/");
 
-  const aboutText: string =
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. \
-  Nisi illum ex ad nemo rerum at, inventore numquam pariatur optio odit quidem labore aspernatur.\
-  Dolorum veritatis quas odio, recusandae vero explicabo. \
-  Lorem ipsum, dolor sit amet consectetur adipisicing elit. \
-  Nisi illum ex ad nemo rerum at, inventore numquam pariatur optio odit quidem labore aspernatur.\
-  Dolorum veritatis quas odio, recusandae vero explicabo.";
+  const aboutText =
+    "Мы ваш личный помощник в таких направлениях как экскурсии в любом направлении и на самом различном транспорте 😉. \
+    \n Поможем вам выбрать и снять подходящее для вас жильё, с лучшими видами. \
+    Если вы ищите квартиру своей мечты, мы поможем вам и с этим! \
+    Так же построим Каркасно-Щитовой дом по вашему проекту.";
 
   const mess1 = [
     "Морские прогулки",
