@@ -1,61 +1,26 @@
 {
   "name": "crimea",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "bootstrap": "^5.1.3",
-    "html-react-parser": "^1.4.8",
-    "node-sass": "^7.0.1",
-    "react": "^17.0.2",
-    "react-bootstrap": "^2.1.2",
-    "react-dom": "^17.0.2",
-    "react-fs": "^0.0.0",
-    "react-scripts": "5.0.0",
-    "typescript": "^4.1.2",
-    "web-vitals": "^2.1.4"
-  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikitaKorablev/react-Sudak24.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikitaKorablev/react-Sudak24/issues"
   },
-  "devDependencies": {
-    "@types/file-saver": "^2.0.5",
-    "@types/react": "^17.0.38",
-    "@types/react-dom": "^17.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.10.1",
-    "@typescript-eslint/parser": "^5.10.1",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "file-loader": "^6.2.0",
-    "prettier": "^2.5.1"
+  "homepage": "https://github.com/NikitaKorablev/react-Sudak24#readme",
+  "dependencies": {
+    "cookie-parse": "^0.4.0",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "nodemon": "^2.0.20"
   }
 }
