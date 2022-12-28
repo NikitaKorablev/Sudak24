@@ -1,3 +1,7 @@
+main {
+  min-width: 425px;
+}
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -95,8 +99,52 @@
   height: 3rem;
 }
 
+@media (min-width: 576px) {
+  .custom-row.row-cols-sm-2 > * {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .custom-row.row-cols-md-3 > * {
+    width: 50%;
+  }
+}
 @media (min-width: 992px) {
   .rounded-lg-3 {
     border-radius: 0.3rem;
+  }
+  .custom-row > * {
+    width: 33.3333333333% !important;
+  }
+}
+a {
+  text-decoration: none;
+}
+
+.primary-card {
+  opacity: 1;
+  transition: opacity 124ms linear, transform 124ms linear;
+  cursor: pointer;
+}
+
+.primary-card:hover {
+  opacity: 90%;
+}
+
+.modal-backdrop {
+  min-width: 425px;
+  height: 100vh;
+}
+
+.modal-dialog {
+  min-width: 406px;
+}
+
+@media (max-width: 768px) {
+  .underground {
+    padding-top: 2rem !important;
+  }
+  #custom-cards {
+    padding-top: 2rem !important;
   }
 }/*# sourceMappingURL=style.css.map */
