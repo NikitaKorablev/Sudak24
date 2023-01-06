@@ -1,0 +1,36 @@
+$p-lr: 2rem;
+$p-tb: 3rem;
+
+.modal-backdrop {
+  min-width: 425px;
+  height: 100vh;
+}
+.modal-dialog {
+  min-width: 800px;
+}
+
+.modal-header {
+  // padding: $p-tb $p-lr 0 $p-lr !important;
+}
+
+.modal-body {
+  padding: 2rem 0 !important;
+}
+.modal-body-conteiner {
+  padding: 0 3rem;
+}
+
+#carousel {
+  max-width: 30rem;
+}
+
+.carousel-item {
+  img {
+    height: 15rem;
+    width: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-dialog{max-width: 900px !important}
+}

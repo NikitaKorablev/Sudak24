@@ -117,14 +117,6 @@ a {
   opacity: 90%;
 }
 
-.modal-backdrop {
-  min-width: 425px;
-  height: 100vh;
-}
-.modal-dialog {
-  min-width: 406px;
-}
-
 @media(max-width: 768px) {
   .underground {padding-top: 2rem !important}
   #custom-cards {padding-top: 2rem !important}
