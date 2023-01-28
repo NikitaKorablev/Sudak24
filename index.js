@@ -1,7 +1,11 @@
+// Imports
 const express = require("express");
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
+const { router } = require("./controllers/requests.js");
 
+
+// Initializing
 const port = 3005;
 const hostname = "127.0.0.1";
 
@@ -18,14 +22,16 @@ app.set("views", "views");
 app.use(express.static(__dirname + "/public/"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use("/", router);
 
+// Routes
 app.get("/", (req, res) => {
-  //   res.send("Hello World!");
   res.render("layouts/main", {
     message: "Hello World!!!",
   });
 });
 
+// Running an App
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
