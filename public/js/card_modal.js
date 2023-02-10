@@ -166,12 +166,12 @@ function newModal(info) {
   button3.setAttribute("data-bs-slide", "prev");
   //-----------------------------------------------------------
   const span3 = document.createElement("span");
-  span1.className = "carousel-control-next-icon";
-  span1.ariaHidden = true;
+  span3.className = "carousel-control-next-icon";
+  span3.ariaHidden = true;
 
   const span4 = document.createElement("span");
-  span2.className = "visually-hidden";
-  span2.textContent = "Next";
+  span4.className = "visually-hidden";
+  span4.textContent = "Next";
 
   button3.appendChild(span3);
   button3.appendChild(span4);
