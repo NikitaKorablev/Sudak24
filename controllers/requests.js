@@ -1,14 +1,13 @@
 const fs = require("fs");
 
-function readFiles() {
-  const directoryPath = "media/";
+async function readFiles(req, res, next) {
+  const directoryPath = req.query.src;
   fs.readdir(directoryPath, function (err, files) {
     if (err) {
       console.log("Unnable to scan dyrectory:" + err);
+      return next(err);
     }
-    files.forEach((file) => {
-      console.log(file);
-    });
+    return res.send(JSON.stringify(files))
   });
 }
 
@@ -26,15 +25,17 @@ async function getData(req, res) {
   const result = await client.query("SELECT * from mydb");
   client.end();
 
-  res.send(JSON.stringify(result.rows[0]));
+  res.send(JSON.stringify(result.rows));
 }
+
 
 async function sendImage(req, res, next) {
   const imageSrc = req.query.src;
-  console.log(imageSrc);
-  fs.readFile(`${imageSrc}`, function (err, data) {
+  const imageName = req.query.name;
+  fs.readFile(`${imageSrc + imageName}`, function (err, data) {
     if (err) {
       return next(err);
+      // return res.end();
     };
     res.writeHead(200, { "Content-Type": "image/jpg" });
     res.write(data);
@@ -43,15 +44,11 @@ async function sendImage(req, res, next) {
 }
 
 async function sendPrice(req, res, next) {
-  const fileSrc = req.query.src;
-  fs.readFile(`${fileSrc}`, function (err, data) {
-    if (err) {
-      return next(err);
-    };
-    res.writeHead(200, { "Content-Type": "application/pdf" });
-    res.write(data);
-    return res.end();
+  const fileDir = req.query.src + req.query.name;
+  const fileName = req.query.name;
+  return res.download(fileDir, fileName, function (err) {
+    if (err) next(err);
   });
 }
 
-module.exports = { getData, sendImage, sendPrice };
+module.exports = { getData, sendImage, sendPrice, readFiles };

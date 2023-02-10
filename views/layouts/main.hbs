@@ -12,63 +12,17 @@
     <link href="css/mainStyles/style.css" rel="stylesheet" />
 
     <script src="js/fetch.js" type="module"></script>
+    <script src="js/main.js" type="module"></script>
+    <script src="js/card_modal.js" type="module"></script>
   </head>
   <body>
       {{> header}}
 
       <div class="container px-4 py-5" id="custom-cards">
         <div
+          id="cards-container"
           class="underground row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5"
         >
-          <div class="col">
-            <a
-              id="test"
-              class="primary-card card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-              {{!-- style="background-image: url('images/unsplash-photo-1.jpg')" --}}
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
-            >
-              <div
-                class="d-flex flex-column h-100 p-5 text-white text-shadow-1"
-              >
-                <h3 class="pt-3 pb-3 mt-auto mb-auto display-6 lh-1 fw-bold">
-                  Short title, long jacket
-                </h3>
-              </div>
-            </a>
-          </div>
-
-          <div class="col">
-            <a
-              class="primary-card card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-              style="background-image: url('images/unsplash-photo-2.jpg')"
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
-            >
-              <div
-                class="d-flex flex-column h-100 p-5 text-white text-shadow-1"
-              >
-                <h3 class="mt-auto mb-auto display-6 lh-1 fw-bold">
-                  Much longer title that wraps to multiple lines
-                </h3>
-              </div>
-            </a>
-          </div>
-
-          <div class="col">
-            <a
-              class="primary-card card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-              style="background-image: url('images/unsplash-photo-3.jpg')"
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
-            >
-              <div class="d-flex flex-column h-100 p-5 text-shadow-1">
-                <h3 class="mt-auto mb-auto display-6 lh-1 fw-bold">
-                  Another longer title belongs here
-                </h3>
-              </div>
-            </a>
-          </div>
         </div>
       </div>
 
@@ -94,11 +48,9 @@
           </div>
         </div>
       </div>
-      {{!-- <div id="test">
-      </div> --}}
     </main>
 
-    {{> modal}}  
+    {{!-- {{> modal}} --}}
   </body>
   <script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </html>

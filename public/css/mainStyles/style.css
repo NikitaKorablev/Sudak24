@@ -121,6 +121,10 @@ a {
   text-decoration: none;
 }
 
+#cardP {
+  margin-bottom: 0 !important;
+}
+
 .primary-card {
   opacity: 1;
   transition: opacity 124ms linear, transform 124ms linear;
