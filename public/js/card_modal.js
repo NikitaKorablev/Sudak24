@@ -14,11 +14,13 @@ function concateString(s) {
 
 async function setNewCard(param) {
   // console.log(param);
-  const dir = await fetchReadFiles(`assets/${param.Title}`);
+  // const dir = await fetchReadFiles(`assets/${param.Title}`);
   // console.log(dir);
-  if (param.Title === undefined)
-    throw new Error("error with param");
-  let imgUrl = await fetchGetImage({ src: `assets/${param.Title}/`, name: "bg.jpg" });
+  if (param.Title === undefined) throw new Error("error with param");
+  let imgUrl = await fetchGetImage({
+    src: `assets/${param.Title}/`,
+    name: "bg.jpg",
+  });
   imgUrl = typeof imgUrl == "string" ? imgUrl : URL.createObjectURL(imgUrl);
   //-----------------------------------------------------------
   const card = document.createElement("div");
@@ -59,31 +61,37 @@ async function setNewCard(param) {
   cardsContainer.appendChild(card);
 }
 
-  //-----------------------------------------------------------
-  //-----------------------------------------------------------
-  //-----------------------------------------------------------
-  //-----------------------------------------------------------
-  //-----------------------------------------------------------
-  //-----------------------------------------------------------
-  //-----------------------------------------------------------
+//-----------------------------------------------------------
+//-----------------------------------------------------------
+//-----------------------------------------------------------
+//-----------------------------------------------------------
+//-----------------------------------------------------------
+//-----------------------------------------------------------
+//-----------------------------------------------------------
 
-function newCarouselImage(src) {
+async function newCarouselImage(src, ind) {
   const div = document.createElement("div");
-  div.classList.add("carousel-item", "active");
+  if (ind == 0 || ind == undefined) {
+    div.classList.add("carousel-item", "active");
+  } else {
+    div.className = "carousel-item";
+  }
 
   const img = document.createElement("img");
   img.className = "img-fluid";
   try {
-    img.src = URL.createObjectURL(src);    
-  } catch {
-    img.src = "images/start.jpg";
+    img.src = URL.createObjectURL(await fetchGetImage(src));
+  } catch (err) {
+    console.log(src);
+    console.error(err);
+    img.src = "images/moon.jpg";
   }
 
   div.appendChild(img);
   return div;
 }
 
-function newModal(info) {
+async function newModal(info) {
   // console.log(info);
 
   const modal = document.createElement("div");
@@ -131,7 +139,7 @@ function newModal(info) {
   carousel.className = "col-6";
   //-----------------------------------------------------------
   const carouselFade = document.createElement("div");
-  carouselFade.id = "carouselExampleFade";
+  carouselFade.id = `carousel-${info.Title}`;
   carouselFade.classList.add("carousel", "slide", "carousel-fade");
   carouselFade.setAttribute("data-bs-ride", "carousel");
   //-----------------------------------------------------------
@@ -139,13 +147,27 @@ function newModal(info) {
   carouselInner.className = "carousel-inner";
   //-----------------------------------------------------------
 
-  carouselInner.appendChild(newCarouselImage("images/start.jpg"));
+  const srcList = await fetchReadFiles(`assets/${info.Title}/carousel`);
+  // console.log(srcList);
 
+  if (srcList.length == 0)
+    carouselInner.appendChild(await newCarouselImage({src:"assets/", name: "moon.jpg"}));
+  else
+    srcList.forEach(async (el, ind) => {
+      // console.log(await newCarouselImage({ src: `assets/${info.Title}/carousel/`, name: el }));
+      // console.log(ind);
+      carouselInner.appendChild(
+        await newCarouselImage({ src: `assets/${info.Title}/carousel/`, name: el }, ind)
+      );
+    });
+
+  //-----------------------------------------------------------
+  
   //-----------------------------------------------------------
   const button2 = document.createElement("button");
   button2.type = "button";
   button2.className = "carousel-control-prev";
-  button2.setAttribute("data-bs-target", "#carouselExampleFade");
+  button2.setAttribute("data-bs-target", `#carousel-${info.Title}`);
   button2.setAttribute("data-bs-slide", "prev");
   //-----------------------------------------------------------
   const span1 = document.createElement("span");
@@ -159,11 +181,13 @@ function newModal(info) {
   button2.appendChild(span1);
   button2.appendChild(span2);
   //-----------------------------------------------------------
+  
+  //-----------------------------------------------------------
   const button3 = document.createElement("button");
   button3.type = "button";
   button3.className = "carousel-control-next";
-  button3.setAttribute("data-bs-target", "#carouselExampleFade");
-  button3.setAttribute("data-bs-slide", "prev");
+  button3.setAttribute("data-bs-target", `#carousel-${info.Title}`);
+  button3.setAttribute("data-bs-slide", "next");
   //-----------------------------------------------------------
   const span3 = document.createElement("span");
   span3.className = "carousel-control-next-icon";
@@ -206,7 +230,7 @@ function newModal(info) {
   button4.textContent = "Прайс-лист";
 
   button4.addEventListener("click", async () => {
-    console.log(info.Title);
+    // console.log(info.Title);
     const link = document.createElement("a");
     link.href = URL.createObjectURL(await fetchGetPrice(info.Title));
     link.download = `${concateString(info.Title)}`;
@@ -226,6 +250,5 @@ function newModal(info) {
   const body = document.getElementsByTagName("body")[0];
   body.appendChild(modal);
 }
-
 
 export { setNewCard, newModal };

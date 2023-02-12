@@ -39,8 +39,11 @@ async function sendImage(req, res, next) {
     };
     res.writeHead(200, { "Content-Type": "image/jpg" });
     res.write(data);
+    // console.log({data, data});
     return res.end();
   });
+  // console.log(test);
+  // res.write();
 }
 
 async function sendPrice(req, res, next) {
