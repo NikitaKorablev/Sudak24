@@ -6,7 +6,9 @@ $p-tb: 3rem;
   height: 100vh;
 }
 .modal-dialog {
-  min-width: 800px;
+  min-width: 200px;
+  margin-right: auto !important;
+  margin-left: auto !important;
 }
 
 .modal-header {
@@ -25,12 +27,35 @@ $p-tb: 3rem;
 }
 
 .carousel-item {
-  img {
-    height: 15rem;
-    width: auto;
-  }
+  min-height: 15rem;
+  // img {
+  //   height: 15rem;
+  //   width: auto;
+  // }
 }
 
-@media (min-width: 768px) {
-  .modal-dialog{max-width: 900px !important}
+@media (min-width: 1441px) {
+  .modal-dialog{min-width: 1440px !important}
 }
+
+@media (max-width: 1440px) {
+  .modal-dialog{max-width: 1000px !important}
+}
+
+@media (max-width: 1024px) {
+  .modal-dialog{max-width: 750px !important}
+}
+
+@media (max-width: 767px) {
+  .modal-dialog{max-width: 420px !important}
+  #textCol{padding-top: 14px;}
+}
+
+@media (max-width: 425px) {
+  .modal-dialog{max-width: 400px !important}
+}
+
+
+
+
+// @media (min-width: )

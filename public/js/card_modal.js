@@ -72,22 +72,35 @@ async function setNewCard(param) {
 async function newCarouselImage(src, ind) {
   const div = document.createElement("div");
   if (ind == 0 || ind == undefined) {
-    div.classList.add("carousel-item", "active");
+    div.classList.add("carousel-item", "active", "card-cover");
   } else {
-    div.className = "carousel-item";
+    div.classList.add("carousel-item", "card-cover");
   }
 
-  const img = document.createElement("img");
-  img.className = "img-fluid";
+  // const img = document.createElement("img");
+  // img.className = "img-fluid";
+  // try {
+  //   img.src = URL.createObjectURL(await fetchGetImage(src));
+  // } catch (err) {
+  //   console.log(src);
+  //   console.error(err);
+  //   img.src = "images/moon.jpg";
+  // }
+
+  // div.appendChild(img);
+
   try {
-    img.src = URL.createObjectURL(await fetchGetImage(src));
+    div.style.backgroundImage =
+      div.style = `background-image: url(${URL.createObjectURL(
+        await fetchGetImage(src)
+      )})`;
   } catch (err) {
     console.log(src);
     console.error(err);
-    img.src = "images/moon.jpg";
+    div.style = `background-image: url(${URL.createObjectURL(
+      "images/moon.jpg"
+    )})`;
   }
-
-  div.appendChild(img);
   return div;
 }
 
@@ -132,11 +145,17 @@ async function newModal(info) {
   modalBodyConteiner.className = "modal-body-conteiner";
   //-----------------------------------------------------------
   const row = document.createElement("div");
-  row.classList.add("row", "justify-content-between");
+  row.classList.add(
+    "row",
+    "row-cols-1",
+    "row-cols-sm-1",
+    "row-cols-md-2",
+    "justify-content-between"
+  );
   //-----------------------------------------------------------
   const carousel = document.createElement("div");
   carousel.id = "carousel";
-  carousel.className = "col-6";
+  carousel.className = "col";
   //-----------------------------------------------------------
   const carouselFade = document.createElement("div");
   carouselFade.id = `carousel-${info.Title}`;
@@ -151,18 +170,23 @@ async function newModal(info) {
   // console.log(srcList);
 
   if (srcList.length == 0)
-    carouselInner.appendChild(await newCarouselImage({src:"assets/", name: "moon.jpg"}));
+    carouselInner.appendChild(
+      await newCarouselImage({ src: "assets/", name: "moon.jpg" })
+    );
   else
     srcList.forEach(async (el, ind) => {
       // console.log(await newCarouselImage({ src: `assets/${info.Title}/carousel/`, name: el }));
       // console.log(ind);
       carouselInner.appendChild(
-        await newCarouselImage({ src: `assets/${info.Title}/carousel/`, name: el }, ind)
+        await newCarouselImage(
+          { src: `assets/${info.Title}/carousel/`, name: el },
+          ind
+        )
       );
     });
 
   //-----------------------------------------------------------
-  
+
   //-----------------------------------------------------------
   const button2 = document.createElement("button");
   button2.type = "button";
@@ -181,7 +205,7 @@ async function newModal(info) {
   button2.appendChild(span1);
   button2.appendChild(span2);
   //-----------------------------------------------------------
-  
+
   //-----------------------------------------------------------
   const button3 = document.createElement("button");
   button3.type = "button";
@@ -208,7 +232,8 @@ async function newModal(info) {
   carousel.appendChild(carouselFade);
   //-----------------------------------------------------------
   const col6 = document.createElement("div");
-  col6.className = "col-6";
+  col6.id = "textCol";
+  col6.className = "col";
   col6.textContent =
     "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, \
   cumque recusandae, nulla harum ipsa quasi, exercitationem veniam \
