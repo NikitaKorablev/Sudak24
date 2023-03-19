@@ -147,7 +147,7 @@ async function newModal(info) {
   const row = document.createElement("div");
   row.classList.add(
     "row",
-    "row-cols-1",
+    "row-cols-1", 
     "row-cols-sm-1",
     "row-cols-md-2",
     "justify-content-between"

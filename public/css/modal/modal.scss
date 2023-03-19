@@ -11,10 +11,6 @@ $p-tb: 3rem;
   margin-left: auto !important;
 }
 
-.modal-header {
-  // padding: $p-tb $p-lr 0 $p-lr !important;
-}
-
 .modal-body {
   padding: 2rem 0 !important;
 }
@@ -27,15 +23,11 @@ $p-tb: 3rem;
 }
 
 .carousel-item {
-  min-height: 15rem;
-  // img {
-  //   height: 15rem;
-  //   width: auto;
-  // }
+  min-height: 20rem;
 }
 
-@media (min-width: 1441px) {
-  .modal-dialog{min-width: 1440px !important}
+@media (min-width: 1440px) {
+  .modal-dialog{min-width: 1000px !important}
 }
 
 @media (max-width: 1440px) {

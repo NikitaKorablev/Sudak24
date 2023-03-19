@@ -22,12 +22,12 @@
 }
 
 .carousel-item {
-  min-height: 15rem;
+  min-height: 20rem;
 }
 
-@media (min-width: 1441px) {
+@media (min-width: 1440px) {
   .modal-dialog {
-    min-width: 1440px !important;
+    min-width: 1000px !important;
   }
 }
 @media (max-width: 1440px) {

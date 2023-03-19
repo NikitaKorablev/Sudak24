@@ -10,9 +10,6 @@ const info = await fetchGetData();
 
 info.forEach((el) => {
   setNewCard(el);
-  
-  // await fetchReadFiles(`assets/${info.Title}/carousel`);
-
   newModal(el)
 });
 
