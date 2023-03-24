@@ -11,14 +11,31 @@ async function readFiles(req, res, next) {
   });
 }
 
-async function getData(req, res) {
+// async function getData(req, res) { // for lockalhost
+//   const { Client } = require("pg");
+//   const client = new Client({
+//     host: "localhost",
+//     user: "nikita",
+//     port: "5432",
+//     password: "nikita",
+//     database: "nikita",
+//   });
+
+//   await client.connect();
+//   const result = await client.query("SELECT * from mydb");
+//   client.end();
+
+//   res.send(JSON.stringify(result.rows));
+// }
+
+async function getData(req, res) { // for timeweb
   const { Client } = require("pg");
   const client = new Client({
     host: "localhost",
     user: "nikita",
     port: "5432",
     password: "nikita",
-    database: "nikita",
+    database: "root",
   });
 
   await client.connect();
