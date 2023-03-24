@@ -34,7 +34,7 @@ async function getData(req, res) { // for timeweb
     host: "localhost",
     user: "nikita",
     port: "5432",
-    password: "nikita",
+    password: "iQB44ntA",
     database: "root",
   });
 
