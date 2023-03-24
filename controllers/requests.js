@@ -32,9 +32,9 @@ async function getData(req, res) { // for timeweb
   const { Client } = require("pg");
   const client = new Client({
     host: "localhost",
-    user: "nikita",
+    user: "root",
     port: "5432",
-    password: "iQB44ntA",
+    password: "",
     database: "root",
   });
 
