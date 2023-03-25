@@ -13,7 +13,7 @@ info.forEach((el) => {
   newModal(el)
 });
 
-// const imgUrl = await fetchGetImage({ src: "assets/", name: "testImage.jpg" });
+// const imgUrl = await fetchGetImage({ src: "assets/", name: "testImage.webp" });
 // const a = document.getElementById("test");
 // a.style = `background-image: url(${URL.createObjectURL(imgUrl)})`;
 

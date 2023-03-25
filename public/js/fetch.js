@@ -30,7 +30,7 @@ async function fetchGetImage(req) {
     })
     .catch((err) => {
       // console.log(err);
-      return "../images/moon.jpg";
+      return "../images/moon.webp";
     });
 }
 

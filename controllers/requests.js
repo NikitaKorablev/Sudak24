@@ -11,7 +11,7 @@ async function readFiles(req, res, next) {
   });
 }
 
-// async function getData(req, res) { // for lockalhost
+// async function getData(req, res) { // for localhost
 //   const { Client } = require("pg");
 //   const client = new Client({
 //     host: "localhost",
@@ -54,7 +54,7 @@ async function sendImage(req, res, next) {
       return next(err);
       // return res.end();
     };
-    res.writeHead(200, { "Content-Type": "image/jpg" });
+    res.writeHead(200, { "Content-Type": "image/webp" });
     res.write(data);
     // console.log({data, data});
     return res.end();

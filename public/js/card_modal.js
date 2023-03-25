@@ -19,7 +19,7 @@ async function setNewCard(param) {
   if (param.Title === undefined) throw new Error("error with param");
   let imgUrl = await fetchGetImage({
     src: `assets/${param.Title}/`,
-    name: "bg.jpg",
+    name: "bg.webp",
   });
   imgUrl = typeof imgUrl == "string" ? imgUrl : URL.createObjectURL(imgUrl);
   //-----------------------------------------------------------
@@ -37,7 +37,7 @@ async function setNewCard(param) {
     "rounded-4",
     "shadow-lg"
   );
-  // a.style = `background-image: url(../images/moon.jpg)`;
+  // a.style = `background-image: url(../images/moon.webp)`;
   a.style = `background-image: url(${imgUrl})`;
   a.setAttribute("data-bs-toggle", "modal");
   a.setAttribute("data-bs-target", `#${param.Title}`);
@@ -84,7 +84,7 @@ async function newCarouselImage(src, ind) {
   // } catch (err) {
   //   console.log(src);
   //   console.error(err);
-  //   img.src = "images/moon.jpg";
+  //   img.src = "images/moon.webp";
   // }
 
   // div.appendChild(img);
@@ -98,7 +98,7 @@ async function newCarouselImage(src, ind) {
     console.log(src);
     console.error(err);
     div.style = `background-image: url(${URL.createObjectURL(
-      "images/moon.jpg"
+      "images/moon.webp"
     )})`;
   }
   return div;
@@ -171,7 +171,7 @@ async function newModal(info) {
 
   if (srcList.length == 0)
     carouselInner.appendChild(
-      await newCarouselImage({ src: "assets/", name: "moon.jpg" })
+      await newCarouselImage({ src: "assets/", name: "moon.webp" })
     );
   else
     srcList.forEach(async (el, ind) => {
