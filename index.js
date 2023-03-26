@@ -7,8 +7,8 @@ const { router } = require("./controllers/routes.js");
 
 // Initializing
 const port = 3005;
-// const hostname = "127.0.0.1"; //localhost
-const hostname = "92.255.77.197"; //timeweb
+const hostname = "127.0.0.1"; //localhost
+// const hostname = "92.255.77.197"; //timeweb
 
 const app = express();
 const hbs = exphbs.create({
