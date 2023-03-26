@@ -11,31 +11,14 @@ async function readFiles(req, res, next) {
   });
 }
 
-async function getData(req, res) { // for localhost
-  const { Client } = require("pg");
-  const client = new Client({
-    host: "localhost",
-    user: "nikita",
-    port: "5432",
-    password: "nikita",
-    database: "nikita",
-  });
-
-  await client.connect();
-  const result = await client.query("SELECT * from mydb");
-  client.end();
-
-  res.send(JSON.stringify(result.rows));
-}
-
-// async function getData(req, res) { // for timeweb
+// async function getData(req, res) { // for localhost
 //   const { Client } = require("pg");
 //   const client = new Client({
 //     host: "localhost",
-//     user: "root",
+//     user: "nikita",
 //     port: "5432",
-//     password: "root",	  
-//     database: "root",
+//     password: "nikita",
+//     database: "nikita",
 //   });
 
 //   await client.connect();
@@ -44,6 +27,23 @@ async function getData(req, res) { // for localhost
 
 //   res.send(JSON.stringify(result.rows));
 // }
+
+async function getData(req, res) { // for timeweb
+  const { Client } = require("pg");
+  const client = new Client({
+    host: "localhost",
+    user: "root",
+    port: "5432",
+    password: "root",	  
+    database: "root",
+  });
+
+  await client.connect();
+  const result = await client.query("SELECT * from mydb");
+  client.end();
+
+  res.send(JSON.stringify(result.rows));
+}
 
 
 async function sendImage(req, res, next) {
