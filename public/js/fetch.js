@@ -81,4 +81,27 @@ async function fetchReadFiles(req) {
     });
 }
 
-export { fetchGetData, fetchGetImage, fetchGetPrice, fetchReadFiles };
+async function fetchGetDecription(req) {
+  return fetch(
+    "/getDescription?" +
+      new URLSearchParams({
+        desc: req
+      })
+  )
+    .then((resp) => {
+      if (resp.status < 200 || resp.status >= 300)
+        // если возникла ошибка, то срабатывает исключение и кадет в catch
+        throw new Error("connect error");
+        return resp.json();
+    })
+    .then((json) => {
+      // console.log(json);
+      return json[0].Description;
+    })
+    .catch((err) => {
+      console.error(err);
+      return err;
+    });
+}
+
+export { fetchGetData, fetchGetImage, fetchGetPrice, fetchReadFiles, fetchGetDecription };

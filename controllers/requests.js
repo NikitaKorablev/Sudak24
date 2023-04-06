@@ -1,17 +1,25 @@
 const fs = require("fs");
 
-async function readFiles(req, res, next) {
-  const directoryPath = req.query.src;
-  fs.readdir(directoryPath, function (err, files) {
-    if (err) {
-      console.log("Unnable to scan dyrectory:" + err);
-      return next(err);
-    }
-    return res.send(JSON.stringify(files))
+
+async function getData(req, res) { // for localhost
+  const { Client } = require("pg");
+  const client = new Client({
+    host: "localhost",
+    user: "nikita",
+    port: "5432",
+    password: "nikita",
+    database: "nikita",
   });
+
+  await client.connect();
+  const result = await client.query("SELECT * from mydb");
+  client.end();
+
+  res.send(JSON.stringify(result.rows));
 }
 
-// async function getData(req, res) { // for localhost
+// async function getData(req, res) { // for timeweb
+
 //   const { Client } = require("pg");
 //   const client = new Client({
 //     host: "localhost",
@@ -28,23 +36,16 @@ async function readFiles(req, res, next) {
 //   res.send(JSON.stringify(result.rows));
 // }
 
-async function getData(req, res) { // for timeweb
-  const { Client } = require("pg");
-  const client = new Client({
-    host: "localhost",
-    user: "root",
-    port: "5432",
-    password: "root",	  
-    database: "root",
+async function readFiles(req, res, next) {
+  const directoryPath = req.query.src;
+  fs.readdir(directoryPath, function (err, files) {
+    if (err) {
+      console.log("Unnable to scan dyrectory:" + err);
+      return next(err);
+    }
+    return res.send(JSON.stringify(files))
   });
-
-  await client.connect();
-  const result = await client.query("SELECT * from mydb");
-  client.end();
-
-  res.send(JSON.stringify(result.rows));
 }
-
 
 async function sendImage(req, res, next) {
   const imageSrc = req.query.src;
@@ -71,4 +72,25 @@ async function sendPrice(req, res, next) {
   });
 }
 
-module.exports = { getData, sendImage, sendPrice, readFiles };
+async function sendDecription(req, res) {
+  const description = req.query.desc;
+
+  const { Client } = require("pg");
+  const client = new Client({
+    host: "localhost",
+    user: "nikita",
+    port: "5432",
+    password: "nikita",
+    database: "nikita",
+  });
+
+  await client.connect();
+  const result = await client.query(`SELECT "Title", "Description" FROM public.mydb where "Title" = '${description}'`);
+  // result = result.rows[0].Description;
+  
+  client.end();
+
+  res.send(JSON.stringify(result.rows));
+}
+
+module.exports = { getData, sendImage, sendPrice, readFiles, sendDecription };
