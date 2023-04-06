@@ -1,25 +1,7 @@
 const fs = require("fs");
 
 
-async function getData(req, res) { // for localhost
-  const { Client } = require("pg");
-  const client = new Client({
-    host: "localhost",
-    user: "nikita",
-    port: "5432",
-    password: "nikita",
-    database: "nikita",
-  });
-
-  await client.connect();
-  const result = await client.query("SELECT * from mydb");
-  client.end();
-
-  res.send(JSON.stringify(result.rows));
-}
-
-// async function getData(req, res) { // for timeweb
-
+// async function getData(req, res) { // for localhost
 //   const { Client } = require("pg");
 //   const client = new Client({
 //     host: "localhost",
@@ -35,6 +17,24 @@ async function getData(req, res) { // for localhost
 
 //   res.send(JSON.stringify(result.rows));
 // }
+
+async function getData(req, res) { // for timeweb
+
+  const { Client } = require("pg");
+  const client = new Client({
+    host: "localhost",
+    user: "nikita",
+    port: "5432",
+    password: "nikita",
+    database: "nikita",
+  });
+
+  await client.connect();
+  const result = await client.query("SELECT * from mydb");
+  client.end();
+
+  res.send(JSON.stringify(result.rows));
+}
 
 async function readFiles(req, res, next) {
   const directoryPath = req.query.src;
