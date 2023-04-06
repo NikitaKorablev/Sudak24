@@ -1,4 +1,4 @@
-import { fetchGetImage, fetchReadFiles, fetchGetPrice } from "./fetch.js";
+import { fetchGetImage, fetchReadFiles, fetchGetPrice, fetchGetDecription  } from "./fetch.js";
 
 function concateString(s) {
   const obj = s.split("_");
@@ -234,11 +234,13 @@ async function newModal(info) {
   const col6 = document.createElement("div");
   col6.id = "textCol";
   col6.className = "col";
-  col6.textContent =
-    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, \
-  cumque recusandae, nulla harum ipsa quasi, exercitationem veniam \
-  distinctio beatae consequuntur modi assumenda vitae. Sit eligendi, \
-  magnam libero iure quis ullam.";
+  const tmp = await fetchGetDecription(info.Title);
+  col6.textContent = tmp;
+  // col6.textContent =
+  //   "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, \
+  // cumque recusandae, nulla harum ipsa quasi, exercitationem veniam \
+  // distinctio beatae consequuntur modi assumenda vitae. Sit eligendi, \
+  // magnam libero iure quis ullam.";
   //-----------------------------------------------------------
   row.appendChild(carousel);
   row.appendChild(col6);
