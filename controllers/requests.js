@@ -1,36 +1,42 @@
+const localhost = {
+  host: "localhost",
+  user: "nikita",
+  port: "5432",
+  password: "nikita",
+  database: "nikita"
+}
+const timeweb = {
+  host: "localhost",
+  user: "root",
+  port: "5432",
+  password: "root",
+  database: "root"
+}
+
+const settings = localhost;
+
+//-------------------------------------------------------------
 const fs = require("fs");
 
-
-// async function getData(req, res) { // for localhost
-//   const { Client } = require("pg");
-//   const client = new Client({
-//     host: "localhost",
-//     user: "nikita",
-//     port: "5432",
-//     password: "nikita",
-//     database: "nikita",
-//   });
-
-//   await client.connect();
-//   const result = await client.query("SELECT * from mydb");
-//   client.end();
-
-//   res.send(JSON.stringify(result.rows));
-// }
-
-async function getData(req, res) { // for timeweb
-
+async function getData(req, res) {
   const { Client } = require("pg");
-  const client = new Client({
-    host: "localhost",
-    user: "root",
-    port: "5432",
-    password: "root",
-    database: "root",
-  });
+  const client = new Client(settings);
 
   await client.connect();
   const result = await client.query("SELECT * from mydb");
+  client.end();
+
+  res.send(JSON.stringify(result.rows));
+}
+
+async function sendDecription(req, res) {
+  const description = req.query.desc;
+
+  const { Client } = require("pg");
+  const client = new Client(settings);
+
+  await client.connect();
+  const result = await client.query(`SELECT "Title", "Description" FROM mydb where "Title" = '${description}'`);
   client.end();
 
   res.send(JSON.stringify(result.rows));
@@ -53,15 +59,11 @@ async function sendImage(req, res, next) {
   fs.readFile(`${imageSrc + imageName}`, function (err, data) {
     if (err) {
       return next(err);
-      // return res.end();
     };
     res.writeHead(200, { "Content-Type": "image/webp" });
     res.write(data);
-    // console.log({data, data});
     return res.end();
   });
-  // console.log(test);
-  // res.write();
 }
 
 async function sendPrice(req, res, next) {
@@ -70,27 +72,6 @@ async function sendPrice(req, res, next) {
   return res.download(fileDir, fileName, function (err) {
     if (err) next(err);
   });
-}
-
-async function sendDecription(req, res) {
-  const description = req.query.desc;
-
-  const { Client } = require("pg");
-  const client = new Client({
-    host: "localhost",
-    user: "root",
-    port: "5432",
-    password: "root",
-    database: "root",
-  });
-
-  await client.connect();
-  const result = await client.query(`SELECT "Title", "Description" FROM mydb where "Title" = '${description}'`);
-  // result = result.rows[0].Description;
-  
-  client.end();
-
-  res.send(JSON.stringify(result.rows));
 }
 
 module.exports = { getData, sendImage, sendPrice, readFiles, sendDecription };

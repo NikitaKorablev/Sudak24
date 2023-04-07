@@ -234,13 +234,31 @@ async function newModal(info) {
   const col6 = document.createElement("div");
   col6.id = "textCol";
   col6.className = "col";
-  const tmp = await fetchGetDecription(info.Title);
-  col6.textContent = tmp;
-  // col6.textContent =
-  //   "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, \
-  // cumque recusandae, nulla harum ipsa quasi, exercitationem veniam \
-  // distinctio beatae consequuntur modi assumenda vitae. Sit eligendi, \
-  // magnam libero iure quis ullam.";
+  //-----------------------------------------------------------
+
+  const divScroll = document.createElement("div");
+  divScroll.style.height = "20rem";
+  divScroll.style.overflow = "auto";
+  divScroll.setAttribute("data-bs-spy", "scroll");
+  divScroll.setAttribute("data-bs-smooth-scroll", "true");
+  divScroll.className = "scrollspy";
+
+  //-----------------------------------------------------------
+
+  let tmp = await fetchGetDecription(info.Title);
+  console.log(tmp);
+  tmp = tmp.split("<br>");
+  
+  tmp.forEach(el => {
+    const col6_br = document.createElement("br");
+    const temp = document.createElement("p");
+    temp.style.marginBottom = 0;
+    temp.textContent = el;
+    divScroll.append(temp);
+    divScroll.append(col6_br);
+  })
+
+  col6.appendChild(divScroll);
   //-----------------------------------------------------------
   row.appendChild(carousel);
   row.appendChild(col6);
