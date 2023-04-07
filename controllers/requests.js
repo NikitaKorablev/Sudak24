@@ -23,10 +23,10 @@ async function getData(req, res) { // for timeweb
   const { Client } = require("pg");
   const client = new Client({
     host: "localhost",
-    user: "nikita",
+    user: "root",
     port: "5432",
-    password: "nikita",
-    database: "nikita",
+    password: "root",
+    database: "root",
   });
 
   await client.connect();
@@ -78,14 +78,14 @@ async function sendDecription(req, res) {
   const { Client } = require("pg");
   const client = new Client({
     host: "localhost",
-    user: "nikita",
+    user: "root",
     port: "5432",
-    password: "nikita",
-    database: "nikita",
+    password: "root",
+    database: "root",
   });
 
   await client.connect();
-  const result = await client.query(`SELECT "Title", "Description" FROM public.mydb where "Title" = '${description}'`);
+  const result = await client.query(`SELECT "Title", "Description" FROM mydb where "Title" = '${description}'`);
   // result = result.rows[0].Description;
   
   client.end();
