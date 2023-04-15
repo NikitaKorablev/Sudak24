@@ -13,7 +13,7 @@ const timeweb = {
   database: "root"
 }
 
-const settings = timeweb;
+const settings = localhost;
 
 //-------------------------------------------------------------
 const fs = require("fs");
